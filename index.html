@@ -457,15 +457,17 @@
             </div>
 
             <div class="contact-wrapper">
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Form submitted!');">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true">
                     <div class="input-group">
-                        <input type="text" placeholder="YOUR NAME" required style="text-transform: uppercase;">
+                        <input type="text" name="name" placeholder="YOUR NAME" required
+                            style="text-transform: uppercase;">
                     </div>
                     <div class="input-group">
-                        <input type="email" placeholder="YOUR EMAIL" required style="text-transform: uppercase;">
+                        <input type="email" name="email" placeholder="YOUR EMAIL" required
+                            style="text-transform: uppercase;">
                     </div>
                     <div class="input-group">
-                        <textarea placeholder="YOUR MESSAGE..." rows="5" required
+                        <textarea name="message" placeholder="YOUR MESSAGE..." rows="5" required
                             style="text-transform: uppercase;"></textarea>
                     </div>
                     <div style="text-align: center;">
