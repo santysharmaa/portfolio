@@ -1,5 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ---- Hamburger Menu ----
+    // ---- Tap-to-flip on touch devices ----
+    const flipScene = document.querySelector('.flip-scene');
+    if (flipScene) {
+        flipScene.addEventListener('click', () => {
+            // Only activate on touch/mobile (hover handles desktop)
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                flipScene.classList.toggle('flipped');
+                // Update footer hint text
+                const footer = flipScene.querySelector('.flip-back-footer');
+                if (footer) {
+                    footer.textContent = flipScene.classList.contains('flipped')
+                        ? 'TAP TO FLIP BACK'
+                        : 'HOVER TO FLIP BACK';
+                }
+            }
+        });
+    }
+
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
@@ -93,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach(reveal => {
         observer.observe(reveal);
     });
-
+    
     // Add reveal class dynamically to sections
     document.querySelectorAll('section:not(.hero) .section-container, .marquee-band').forEach(sec => {
         sec.classList.add('reveal');
