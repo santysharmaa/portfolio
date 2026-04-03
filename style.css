@@ -877,6 +877,117 @@ img {
 
 
 /* =============================================
+   ACHIEVEMENTS SECTION
+   ============================================= */
+.achievements-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 32px 28px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.achievement-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent-color);
+    transition: width 0.4s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.achievement-card:hover::before {
+    width: 100%;
+}
+
+.achievement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    height: 60px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-title {
+    font-family: 'General Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #eaeaea;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.achievement-desc {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: #7a7a7a;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.achievement-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 5px 9px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.achievement-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #eaeaea;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.achievement-link:hover {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+}
+
+
+/* =============================================
    CERTIFICATES SECTION
    ============================================= */
 .cert-grid-new {
